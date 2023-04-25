@@ -3,34 +3,13 @@
   <head>
     <title>A1</title>
     <meta charset="utf-8"/>
-    <script src="https://softvelum.com/player/releases/sldp-v2.24.0.min.js"></script>
+    <script src="https://raw.githubusercontent.com/blackbirdstudiorus/CH/main/playerjs.js" type="text/javascript"></script>
   </head>
   <body>
     <img src="https://static.wikia.nocookie.net/tvpedia/images/b/ba/A1_%28%D1%81_26.12.2022%29.png/revision/latest/scale-to-width-down/250?cb=20230206143713&path-prefix=ru"/>
-    <script src="https://televizorus.com/jsplayer.js">
     <div id="player"></div>
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", initPlayer);
-
-      function initPlayer(){
-        sldpPlayer = SLDP.init({
-          container:           'player',
-          stream_url:          'https://okkotv-live.cdnvideo.ru/channel/A1_HD/1080p.m3u8',
-          adaptive_bitrate: {
-            initial_rendition: '1080p'
-          },
-          buffering:           500,
-          autoplay:            false,
-          height:              1920,
-          width:               1080
-        });
-      };
-
-      function removePlayer(){
-        sldpPlayer.destroy(function () {
-          console.log('SLDP Player is destroyed.');
-        });
-      }
+    <script>
+    var player = new Playerjs({id:"player", file:"http://okkotv-live.cdnvideo.ru/channel/A1_HD/1080p.m3u8"});
     </script>
   </body>
 </html>
